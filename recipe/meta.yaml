@@ -1,14 +1,15 @@
-{% set name = "coreutils" %}
 {% set version = "8.32" %}
 {% set sha256 = "4458d8de7849df44ccab15e16b1548b285224dbba5f08fac070c1c0e0bcc4cfa" %}
 
 package:
-  name: {{ name|lower }}
+  name: coreutils
   version: {{ version }}
 
 source:
-  url: http://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.xz
+  url: http://ftp.gnu.org/gnu/coreutils/coreutils-{{ version }}.tar.xz
   sha256: {{ sha256 }}
+  patches:
+    - 0001-ls-restore-8.31-behavior-on-removed-directories.patch
 
 build:
   number: 0
