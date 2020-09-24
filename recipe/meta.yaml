@@ -1,18 +1,18 @@
 {% set name = "coreutils" %}
-{% set version = "8.31" %}
-{% set sha256 = "ff7a9c918edce6b4f4b2725e3f9b37b0c4d193531cac49a48b56c4d0d3a9e9fd" %}
+{% set version = "8.32" %}
+{% set sha256 = "4458d8de7849df44ccab15e16b1548b285224dbba5f08fac070c1c0e0bcc4cfa" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: http://ftp.gnu.org/gnu/{{ name }}/{{ name  }}-{{ version }}.tar.xz
+  url: http://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.xz
   sha256: {{ sha256 }}
 
 build:
   number: 0
-  skip: True  # [win]
+  skip: true  # [win]
 
 requirements:
   build:
@@ -21,7 +21,7 @@ requirements:
 
 test:
   commands:
-    - ln --relative --help 
+    - ln --relative --help
     - wc --version
     - cat --version
 
@@ -30,7 +30,7 @@ about:
   license: GPL-3.0-or-later
   license_family: GPL
   license_file: COPYING
-  summary: 'The GNU Core Utilities are the basic file, shell and text manipulation utilities of the GNU operating system.'
+  summary: The GNU Core Utilities are the basic file, shell and text manipulation utilities of the GNU operating system.
 
   doc_url: https://www.gnu.org/software/coreutils/manual/html_node/index.html
   dev_url: http://git.savannah.gnu.org/cgit/coreutils.git
