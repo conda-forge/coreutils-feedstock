@@ -16,9 +16,7 @@ build:
 
 outputs:
   - name: {{ name }}
-    build:
-      script_env:
-        - GNU_PREFIX=0
+    script: build_coreutils.sh
 
     requirements:
       build:
@@ -32,9 +30,8 @@ outputs:
         - cat --version
 
   - name: gnu-{{ name }}
-    build:
-      script_env:
-        - GNU_PREFIX=1
+    script: build_gnu-coreutils.sh
+
 
     requirements:
       build:
@@ -43,9 +40,9 @@ outputs:
 
     test:
       commands:
-        - ln --relative --help
-        - wc --version
-        - cat --version
+        - gln --relative --help
+        - gwc --version
+        - gcat --version
 
 about:
   home: https://www.gnu.org/software/coreutils
