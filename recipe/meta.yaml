@@ -19,6 +19,7 @@ requirements:
     - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - make
+    - automake
 
 test:
   commands:
