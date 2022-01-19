@@ -3,6 +3,7 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* ./build-aux
 
 if [[ "$target_platform" == osx-arm64 ]]; then
     ./configure --prefix=$PREFIX --host=arm64
+    rm -rf gnulib-tests
     make -j $CPU_COUNT
     make install
 else
