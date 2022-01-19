@@ -14,16 +14,39 @@ build:
   number: 0
   skip: true  # [win]
 
-requirements:
-  build:
-    - {{ compiler('c') }}
-    - make
+outputs:
+  - name: {{ name }}
+    build:
+      script: 
+        - build_coreutils.sh
 
-test:
-  commands:
-    - ln --relative --help
-    - wc --version
-    - cat --version
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - make
+
+    test:
+      commands:
+        - ln --relative --help
+        - wc --version
+        - cat --version
+
+outputs:
+  - name: gnu-{{ name }}
+    build:
+      script:
+        - build_gnu-coreutils.sh
+
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - make
+
+    test:
+      commands:
+        - ln --relative --help
+        - wc --version
+        - cat --version
 
 about:
   home: https://www.gnu.org/software/coreutils
