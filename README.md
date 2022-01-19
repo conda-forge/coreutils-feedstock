@@ -78,7 +78,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-coreutils-green.svg)](https://anaconda.org/conda-forge/coreutils) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/coreutils.svg)](https://anaconda.org/conda-forge/coreutils) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/coreutils.svg)](https://anaconda.org/conda-forge/coreutils) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/coreutils.svg)](https://anaconda.org/conda-forge/coreutils) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gnu--coreutils-green.svg)](https://anaconda.org/conda-forge/gnu-coreutils) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gnu-coreutils.svg)](https://anaconda.org/conda-forge/gnu-coreutils) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gnu-coreutils.svg)](https://anaconda.org/conda-forge/gnu-coreutils) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gnu-coreutils.svg)](https://anaconda.org/conda-forge/gnu-coreutils) |
 
 Installing coreutils
 ====================
@@ -90,16 +90,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `coreutils` can be installed with:
+Once the `conda-forge` channel has been enabled, `gnu-coreutils` can be installed with:
 
 ```
-conda install coreutils
+conda install gnu-coreutils
 ```
 
-It is possible to list all of the versions of `coreutils` available on your platform with:
+It is possible to list all of the versions of `gnu-coreutils` available on your platform with:
 
 ```
-conda search coreutils --channel conda-forge
+conda search gnu-coreutils --channel conda-forge
 ```
 
 
@@ -168,5 +168,6 @@ Feedstock Maintainers
 =====================
 
 * [@mbargull](https://github.com/mbargull/)
+* [@ngam](https://github.com/ngam/)
 * [@sodre](https://github.com/sodre/)
 
