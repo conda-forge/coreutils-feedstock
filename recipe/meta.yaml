@@ -42,6 +42,8 @@ outputs:
     test:
       commands:
         - gln --relative --help
+        - ln --version  # [linux64]
+        - gln --version  # [linux64]
         - gwc --version
         - gcat --version
 
