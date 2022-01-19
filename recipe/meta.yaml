@@ -3,7 +3,7 @@
 {% set sha256 = "ce30acdf4a41bc5bb30dd955e9eaa75fa216b4e3deb08889ed32433c7b3b97ce" %}
 
 package:
-  name: {{ name|lower }}
+  name: coreutils-split
   version: {{ version }}
 
 source:
@@ -60,3 +60,4 @@ extra:
     - ngam
     - sodre
     - mbargull
+  feedstock-name: coreutils
