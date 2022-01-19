@@ -15,6 +15,7 @@ build:
   skip: true  # [win]
 
 outputs:
+  
   - name: {{ name }}
     script: build_coreutils.sh
 
