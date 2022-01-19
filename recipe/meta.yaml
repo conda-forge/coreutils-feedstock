@@ -18,7 +18,7 @@ outputs:
   - name: {{ name }}
     build:
       script: 
-        - build_coreutils.sh
+        - bash build_coreutils.sh
 
     requirements:
       build:
@@ -31,11 +31,10 @@ outputs:
         - wc --version
         - cat --version
 
-outputs:
   - name: gnu-{{ name }}
     build:
       script:
-        - build_gnu-coreutils.sh
+        - bash build_gnu-coreutils.sh
 
     requirements:
       build:
