@@ -2,7 +2,8 @@
 cp $BUILD_PREFIX/share/gnuconfig/config.* ./build-aux
 
 if [[ "$target_platform" == osx-arm64 ]]; then
-    rm -rf gnulib-tests
+    sed -i.bak 's,gnulib-tests,'',g' Makefile.am
+    sed -i.bak '\/gnulib-tests\/Makefile/d' configure.ac
     ./configure --prefix=$PREFIX --host=arm64
     make -j $CPU_COUNT
     make install
