@@ -17,8 +17,8 @@ build:
 outputs:
   - name: {{ name }}
     build:
-      script: 
-        - bash build_coreutils.sh
+      script_env:
+        - GNU_PREFIX=0
 
     requirements:
       build:
@@ -33,8 +33,8 @@ outputs:
 
   - name: gnu-{{ name }}
     build:
-      script:
-        - bash build_gnu-coreutils.sh
+      script_env:
+        - GNU_PREFIX=1
 
     requirements:
       build:
