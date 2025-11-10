@@ -1,6 +1,6 @@
 {% set name = "coreutils" %}
-{% set version = "9.5" %}
-{% set sha256 = "cd328edeac92f6a665de9f323c93b712af1858bc2e0d88f3f7100469470a1b8a" %}
+{% set version = "9.9" %}
+{% set sha256 = "19bcb6ca867183c57d77155eae946c5eced88183143b45ca51ad7d26c628ca75" %}
 
 package:
   name: coreutils-split
@@ -21,6 +21,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - make
 
     test:
@@ -36,6 +37,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - make
 
     test:
