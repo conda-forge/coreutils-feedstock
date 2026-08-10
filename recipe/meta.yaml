@@ -64,4 +64,5 @@ extra:
     - ngam
     - sodre
     - mbargull
+    - h-vetinari
   feedstock-name: coreutils
