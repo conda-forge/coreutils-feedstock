@@ -50,6 +50,7 @@ outputs:
     tests:
       - script:
           - gln --relative --help
+          # Confirm that gln is the prefixed GNU binary while ln is the system binary.
           - if: linux64
             then:
               - ln --version
