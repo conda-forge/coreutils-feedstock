@@ -1,21 +1,19 @@
-{% set name = "coreutils" %}
 {% set version = "9.9" %}
-{% set sha256 = "19bcb6ca867183c57d77155eae946c5eced88183143b45ca51ad7d26c628ca75" %}
 
 package:
   name: coreutils-split
   version: {{ version }}
 
 source:
-  url: http://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.xz
-  sha256: {{ sha256 }}
+  url: http://ftp.gnu.org/gnu/coreutils/coreutils-{{ version }}.tar.xz
+  sha256: 19bcb6ca867183c57d77155eae946c5eced88183143b45ca51ad7d26c628ca75
 
 build:
   number: 0
   skip: true  # [win]
 
 outputs:
-  - name: {{ name }}
+  - name: coreutils
     script: build_coreutils.sh
 
     requirements:
@@ -30,7 +28,7 @@ outputs:
         - wc --version
         - cat --version
 
-  - name: gnu-{{ name }}
+  - name: gnu-coreutils
     script: build_gnu-coreutils.sh
 
 
