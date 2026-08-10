@@ -3,11 +3,28 @@ About coreutils-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/coreutils-feedstock/blob/main/LICENSE.txt)
 
+
+About coreutils
+---------------
+
 Home: https://www.gnu.org/software/coreutils
 
 Package license: GPL-3.0-or-later
 
 Summary: The GNU Core Utilities are the basic file, shell and text manipulation utilities of the GNU operating system.
+
+Development: http://git.savannah.gnu.org/cgit/coreutils.git
+
+Documentation: https://www.gnu.org/software/coreutils/manual/html_node/index.html
+
+About gnu-coreutils
+-------------------
+
+Home: https://www.gnu.org/software/coreutils
+
+Package license: GPL-3.0-or-later
+
+Summary: The GNU Core Utilities with program names prefixed by g.
 
 Development: http://git.savannah.gnu.org/cgit/coreutils.git
 

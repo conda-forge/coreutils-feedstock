@@ -1,0 +1,82 @@
+schema_version: 1
+
+context:
+  version: "9.9"
+
+recipe:
+  name: coreutils-split
+  version: ${{ version }}
+
+source:
+  url: http://ftp.gnu.org/gnu/coreutils/coreutils-${{ version }}.tar.xz
+  sha256: 19bcb6ca867183c57d77155eae946c5eced88183143b45ca51ad7d26c628ca75
+
+build:
+  number: 2
+  skip: win
+
+outputs:
+  - package:
+      name: coreutils
+    build:
+      script: build_coreutils
+    requirements:
+      build:
+        - ${{ compiler('c') }}
+        - ${{ stdlib('c') }}
+        - make
+    tests:
+      - script:
+          - ln --relative --help
+          - wc --version
+          - cat --version
+    about:
+      homepage: https://www.gnu.org/software/coreutils
+      documentation: https://www.gnu.org/software/coreutils/manual/html_node/index.html
+      repository: http://git.savannah.gnu.org/cgit/coreutils.git
+      license: GPL-3.0-or-later
+      license_file: COPYING
+      summary: The GNU Core Utilities are the basic file, shell and text manipulation utilities of the GNU operating system.
+
+  - package:
+      name: gnu-coreutils
+    build:
+      script: build_gnu-coreutils
+    requirements:
+      build:
+        - ${{ compiler('c') }}
+        - ${{ stdlib('c') }}
+        - make
+    tests:
+      - script:
+          - gln --relative --help
+          # Confirm that gln is the prefixed GNU binary while ln is the system binary.
+          - if: linux64
+            then:
+              - ln --version
+              - gln --version
+          - gwc --version
+          - gcat --version
+    about:
+      homepage: https://www.gnu.org/software/coreutils
+      documentation: https://www.gnu.org/software/coreutils/manual/html_node/index.html
+      repository: http://git.savannah.gnu.org/cgit/coreutils.git
+      license: GPL-3.0-or-later
+      license_file: COPYING
+      summary: The GNU Core Utilities with program names prefixed by g.
+
+about:
+  homepage: https://www.gnu.org/software/coreutils
+  documentation: https://www.gnu.org/software/coreutils/manual/html_node/index.html
+  repository: http://git.savannah.gnu.org/cgit/coreutils.git
+  license: GPL-3.0-or-later
+  license_file: COPYING
+  summary: The GNU Core Utilities are the basic file, shell and text manipulation utilities of the GNU operating system.
+
+extra:
+  recipe-maintainers:
+    - ngam
+    - sodre
+    - mbargull
+    - h-vetinari
+  feedstock-name: coreutils
